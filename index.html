@@ -72,7 +72,7 @@
       <div class="modal-content">
         <div class="well">
           <h3>WAV to MP3 Windows batch script</h3>
-          <p><code>for %%A IN (*.wav) do c:\ffmpeg\ffmpeg\bin\ffmpeg.exe -i "%%A" -write_id3v1 1 -id3v2_version 3 -dither_method modified_e_weighted -map_metadata 0 -c:a libmp3lame -r:a 44100 -q:a 3 -n "%%~nA.mp3"</code></p>
+          <p><code>for %%A IN (*.wav) do c:\ffmpeg\ffmpeg\bin\ffmpeg.exe -i "%%A" -write_id3v1 1 -id3v2_version 3 -dither_method modified_e_weighted -map_metadata 0 -c:a libmp3lame -r:a 44100 -q:a 1 -n "%%~nA.mp3"</code></p>
           <p>This script creates a user-friendly clickable icon and no need to enter the command line. It assumes it is in the same folder as a batch of wav files intended to convert to mp3. The batch script runs a loop for each wav file, keeps same filename of wav for mp3, and skips wav files where mp3 file exists with same name. The batch script runs a loop for each wav file. To stop the loop command for an individual file, press Q to stop. This will leave you with an unfinished mp3 file and the script will move on to the next wav file queued in the loop.</p>
           <dl>
             <dt>ffmpeg</dt><dd>was installed on the C:\ drive at the path named above. Adjust this script based on where ffmpeg is located, per computer running the script.</dd>
@@ -83,7 +83,7 @@
             <dt>-r:a <i>44100</i></dt><dd> (or -ar 44100) sample rate</dd>
             <dt>-c:a </dt><dd>or -ac  set # of audio channels. For output streams it is set by default to # input audio streams</dd>
             <dt>libmp3lame</dt><dd> external encoding library within ffmpeg</dd>
-            <dt>-q:a <i>3</i></dt><dd> (or -qscale:a 3) transcode at constant quality as opposed to constant bitrate 3 is 150-195 bitrate range kbit/s. If you would prefer to use a constant bitrate, this could be replaced with <code>-b:a 320k</code> to set to the maximum bitrate allowed by the MP3 format. For more detailed discussion on variable vs constant bitrates see <a href="https://trac.ffmpeg.org/wiki/Encode/MP3" target="_blank">here.</a></dd>
+            <dt>-q:a <i>1</i></dt><dd> (or -qscale:a 3) transcode at constant quality as opposed to constant bitrate 3 is 190-250 bitrate range kbit/s. If you would prefer to use a constant bitrate, this could be replaced with <code>-b:a 320k</code> to set to the maximum bitrate allowed by the MP3 format. For more detailed discussion on variable vs constant bitrates see <a href="https://trac.ffmpeg.org/wiki/Encode/MP3" target="_blank">here.</a></dd>
             <dt>-n </dt><dd>skips wav files where mp3 file exists with same name</dd>
             <dt><i>"%%~nA.mp3"</i></dt><dd>tells script to name the mp3 output the same as the wav file, in the same folder</dd>
           </dl>
