@@ -83,7 +83,7 @@
             <dt>-r:a <i>44100</i></dt><dd> (or -ar 44100) sample rate</dd>
             <dt>-c:a </dt><dd>or -ac  set # of audio channels. For output streams it is set by default to # input audio streams</dd>
             <dt>libmp3lame</dt><dd> external encoding library within ffmpeg</dd>
-            <dt>-q:a <i>1</i></dt><dd> (or -qscale:a 3) transcode at constant quality as opposed to constant bitrate 3 is 190-250 bitrate range kbit/s. If you would prefer to use a constant bitrate, this could be replaced with <code>-b:a 320k</code> to set to the maximum bitrate allowed by the MP3 format. For more detailed discussion on variable vs constant bitrates see <a href="https://trac.ffmpeg.org/wiki/Encode/MP3" target="_blank">here.</a></dd>
+            <dt>-q:a <i>1</i></dt><dd> (or -qscale:a 3) transcode at constant quality as opposed to constant bitrate 1 is 190-250 bitrate range kbit/s. If you would prefer to use a constant bitrate, this could be replaced with <code>-b:a 320k</code> to set to the maximum bitrate allowed by the MP3 format. For more detailed discussion on variable vs constant bitrates see <a href="https://trac.ffmpeg.org/wiki/Encode/MP3" target="_blank">here.</a></dd>
             <dt>-n </dt><dd>skips wav files where mp3 file exists with same name</dd>
             <dt><i>"%%~nA.mp3"</i></dt><dd>tells script to name the mp3 output the same as the wav file, in the same folder</dd>
           </dl>
